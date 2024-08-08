@@ -1,8 +1,8 @@
 import React from 'react'
-
 import { getHost } from './host'
 import { PromptComponent, PromptProps } from './types'
 
+export { default as PromptHost } from './PromptHost'
 export * from './types'
 
 export function createPromptComponent<T, P>(Component: React.ComponentType<P & PromptProps<T>>): PromptComponent<T, P> {

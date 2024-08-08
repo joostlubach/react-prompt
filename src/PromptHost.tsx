@@ -1,23 +1,27 @@
 import React from 'react'
-
+import { memo } from 'react-util'
+import { useContinuousRef } from 'react-util/hooks'
 import { ref } from './host'
 import { PromptElement } from './types'
 
-const PromptHost = React.memo(() => {
+const PromptHost = memo('PromptHost', () => {
 
   const [prompts, setPrompts] = React.useState<PromptElement<any>[]>([])
+  const promptsRef = useContinuousRef(prompts)
 
   //------
   // Interface
 
-  const push = React.useCallback((messageBox: PromptElement<any>) => {
-    setPrompts([...prompts, messageBox])
-  }, [prompts])
+  const push = React.useCallback((prompt: PromptElement<any>) => {
+    const prompts = promptsRef.current
+    setPrompts([...prompts, prompt])
+  }, [promptsRef])
 
   const pop = React.useCallback(() => {
+    const prompts = promptsRef.current
     if (prompts.length === 0) { return }
     setPrompts(prompts.slice(0, -2))
-  }, [prompts])
+  }, [promptsRef])
 
   React.useImperativeHandle(ref, () => ({
     push,
@@ -34,5 +38,4 @@ const PromptHost = React.memo(() => {
 
 })
 
-Object.assign(PromptHost, {displayName: 'PromptHost'})
 export default PromptHost
