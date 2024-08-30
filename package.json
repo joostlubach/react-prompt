@@ -4,9 +4,6 @@
   "description": "General-purpose Message & Confirm box with imperative interface.",
   "private": true,
   "author": "Joost Lubach",
-  "files": [
-    "dist"
-  ],
   "main": "./src/index.ts",
   "exports": {
     ".": "./src/index.ts"
