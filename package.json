@@ -25,7 +25,7 @@
     "test": "NODE_ENV=test jest"
   },
   "devDependencies": {
-    "typescript": "5.4.3"
+    "typescript": "^5.8.3"
   },
   "peerDependencies": {
     "react": "^18.0",
