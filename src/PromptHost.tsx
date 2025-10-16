@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { memo } from 'react-util'
 import { useContinuousRef } from 'react-util/hooks'
 import { ref } from './host'
@@ -31,7 +31,9 @@ const PromptHost = memo('PromptHost', () => {
   return (
     <>
       {React.Children.map(prompts, (box, index) => (
-        React.cloneElement(box, {key: index})
+        <Fragment key={index}>
+          {box}
+        </Fragment>
       ))}
     </>
   )
