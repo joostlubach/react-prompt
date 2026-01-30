@@ -2,6 +2,7 @@ import React from 'react'
 import { getHost } from './host'
 import { PromptComponent, PromptProps } from './types'
 
+export { getHost }
 export { default as PromptHost } from './PromptHost'
 export * from './types'
 
