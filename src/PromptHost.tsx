@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import { memo } from 'react-util'
-import { useContinuousRef } from 'react-util/hooks'
+import { memo } from '@mosdev/react-util'
+import { useContinuousRef } from '@mosdev/react-util/hooks'
 import { ref } from './host'
 import { PromptElement } from './types'
 
