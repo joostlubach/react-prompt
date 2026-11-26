@@ -20,7 +20,7 @@ const PromptHost = memo('PromptHost', () => {
   const pop = React.useCallback(() => {
     const prompts = promptsRef.current
     if (prompts.length === 0) { return }
-    setPrompts(prompts.slice(0, -2))
+    setPrompts(prompts.slice(0, -1))
   }, [promptsRef])
 
   React.useImperativeHandle(ref, () => ({
